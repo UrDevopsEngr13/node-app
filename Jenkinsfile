@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Build Docker Image'){
             steps{
-                sh "docker build . -t dockerpapa922\nodeapp"
+                sh "docker build . -t dockerpapa922\nodeapp:latest"
             }
 
         }
