@@ -1,5 +1,7 @@
 pipeline {
-    agent any //any available Jenkins agent
+    agent {
+        label 'slave1'
+    }
     environment{
         DOCKER_TAG = getDockerTag()
     }
