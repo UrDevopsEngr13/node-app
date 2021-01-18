@@ -11,6 +11,13 @@ pipeline {
                 sh "docker build . --tag dockerpapa922/nodeapp:${DOCKER_TAG}"
             }            
         }
+        stage('Docker-Hub Push'){
+            withCredentials([string(credentialsId: 'docker-hub-access', variable: 'dockerHubPwd')]) {
+                sh "docker login -u dockerpapa922 -p ${dockerHubPwd}"
+                sh "docker push dockerpapa922/nodeapp:${DOCKER_TAG}"
+                }                     
+            }
+        }
     }
 }
 
