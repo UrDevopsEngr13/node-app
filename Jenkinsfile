@@ -22,7 +22,7 @@ pipeline {
         stage('Deploy to K8s'){
             steps{
                 sh ('chmod +x changeTag.sh')
-                sh ('./changeTag ${DOCKER_TAG}')
+                sh ('./changeTag.sh ${DOCKER_TAG}')
                 script{
                     kubernetesDeploy(
                         configs: 'services.yml node-app-pod.yml', 
