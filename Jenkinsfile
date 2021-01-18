@@ -8,9 +8,8 @@ pipeline {
     stages{
         stage('Build Docker Image'){
             steps{
-                sh "docker build ."
-                sh "docker tag ${docker image ls | grep "<none>" | awk '{print $3}'} dockerpapa922\nodeapp:${DOCKER_TAG}"
-            }
+                sh "docker build . --tag dockerpapa922\nodeapp:${DOCKER_TAG}"
+            }            
 
         }
     }
