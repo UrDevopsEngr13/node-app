@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nodeapp
-        image: dockerpapa922/nodeapp
+        image: dockerpapa922/nodeapp:v1
         ports:
         - containerPort: 8080
 ---
