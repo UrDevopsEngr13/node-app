@@ -21,11 +21,9 @@ pipeline {
         }
         stage('Deploy to K8s'){
             steps{
-                //sh ('chmod +x changeTag.sh')
-                //sh ('./changeTag.sh ${DOCKER_TAG}')
                 script{
                     kubernetesDeploy(
-                        configs: 'node-app-pod.yml', 
+                        configs: 'node-app-depl.yml', 
                         kubeconfigId: 'K8S', 
                         enableConfigSubstition: true
                     ) 
